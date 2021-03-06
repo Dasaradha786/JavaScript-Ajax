@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="digclock.css">
+    <title>digital clock</title>
+</head>
+
+<body>
+    <div id="myclock"></div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();//0-23 hours
+            var m = date.getMinutes();//0-59 mins
+            var s = date.getSeconds();//0-59 secs
+            var session = "AM";
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h -= 12;
+                session = "PM";
+            }
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById('myclock').innerHTML = time;
+            document.getElementById('myclock').innerContent = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();
+    </script>
+</body>
+
+</html>

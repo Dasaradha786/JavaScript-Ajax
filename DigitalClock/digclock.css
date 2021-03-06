@@ -1,0 +1,13 @@
+body{
+    background: wheat;
+}
+#myclock{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: red;
+    font-size: 80px;
+    border: 7px solid white;
+    padding: 5;
+}
